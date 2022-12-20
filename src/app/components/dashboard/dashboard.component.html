@@ -11,11 +11,11 @@
         <div class="spinner-grow text-primary" role="status"></div>
         <div class="spinner-grow text-primary" role="status"></div>
       </div>
-      <div class="card mt-3">
+      <div *ngIf="query" class="card mt-3">
         <div class="card-body">
-          <p><b>Temperatura: </b></p>
-          <p><b>Humedad: </b></p>
-          <p><b>Clima: </b></p>
+          <p><b>Temperatura: </b>{{ temperatura | number: '1.2-2' }} °C</p>
+          <p><b>Humedad: </b> {{ humedad }} </p>
+          <p><b>Clima: </b> {{ clima }} </p>
         </div>
       </div>
     </div>

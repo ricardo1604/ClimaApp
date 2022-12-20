@@ -6,15 +6,25 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClimaService {
-  url = 'https://api.openweathermap.org/data/2.5/weather?appid='; //lat=13.6989939&lon=-89.1914249
-  urlCities = 'http://api.openweathermap.org/geo/1.0/direct?appid='; //q={city name}
+  url = 'https://api.openweathermap.org/data/2.5/weather?appid=';
+  urlCities = 'http://api.openweathermap.org/geo/1.0/direct?appid=';
   key = '6f549e9a7c892893d0eb5f06ec901137';
 
   constructor(private http: HttpClient) { }
 
   getGeocoding(ciudad: string): Observable<any> {
+
     const URL1 = this.urlCities + this.key + '&q=' + ciudad;
-    return this.http.get(URL1)
+
+    let x = this.http.get(URL1)
+
+    return x;
+  }
+
+
+  getWeather(lat: string, lon: string): Observable<any> {
+    const URL = this.url + this.key + '&lat=' + lat + '&lon=' + lon;
+    return this.http.get(URL);
   }
 
 }
