@@ -1,3 +1,8 @@
+<div *ngIf="mostrarError" class="alert alert-dismissible alert-danger">
+  <div class="text-center">
+    <strong>ERROR al obtener el Clima</strong>
+  </div>
+</div>
 <div class="container pt-4">
   <div class="row">
     <div class="col-lg-4">
@@ -16,6 +21,7 @@
           <p><b>Temperatura: </b>{{ temperatura | number: '1.2-2' }} °C</p>
           <p><b>Humedad: </b> {{ humedad }} </p>
           <p><b>Clima: </b> {{ clima }} </p>
+          <p><b>Pais: </b> {{ pais }} </p>
         </div>
       </div>
     </div>
